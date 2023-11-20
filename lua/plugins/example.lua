@@ -215,6 +215,7 @@ return {
         "shellcheck",
         "shfmt",
         "flake8",
+        "angularls",
       },
     },
   },
