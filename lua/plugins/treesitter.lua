@@ -5,8 +5,10 @@ return {
       ensure_installed = {
         "astro",
         "cmake",
+        "c",
         "cpp",
         "css",
+        "dart",
         "fish",
         "gitignore",
         "go",
@@ -16,6 +18,12 @@ return {
         "scss",
         "sql",
         "svelte",
+        "vim",
+        "regex",
+        "lua",
+        "bash",
+        "markdown",
+        "markdown_inline",
       },
     },
     config = function(_, opts)
