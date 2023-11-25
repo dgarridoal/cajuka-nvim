@@ -14,7 +14,7 @@ keymap.set("n", "+", "<C-a>")
 keymap.set("n", "-", "<C-x>")
 
 -- Delete a word backwords
-keymap.set("n", "dw", "vb_d")
+keymap.set("n", "dw", "bved")
 
 -- Jumplist
 keymap.set("n", "<C-m>", "<C-i>", opts)
