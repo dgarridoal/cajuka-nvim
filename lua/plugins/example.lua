@@ -26,15 +26,7 @@ return {
     -- opts will be merged with the parent spec
     opts = { use_diagnostic_signs = true },
   },
-  -- {
-  --   "akinsho/flutter-tools.nvim",
-  --   lazy = false,
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     -- "stevearc/dressing.nvim", -- optional for vim.ui.select
-  --   },
-  --   config = true,
-  -- },
+
   -- disable trouble
   { "folke/trouble.nvim", enabled = false },
 
@@ -148,20 +140,28 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
-        "bash",
-        "html",
-        "javascript",
-        "json",
+        "astro",
+        "cmake",
+        "c",
+        "cpp",
+        "css",
+        "dart",
+        "fish",
+        "gitignore",
+        "go",
+        "graphql",
+        "http",
+        "java",
+        "jsonc",
+        "scss",
+        "sql",
+        "svelte",
+        "vim",
+        "regex",
         "lua",
+        "bash",
         "markdown",
         "markdown_inline",
-        "python",
-        "query",
-        "regex",
-        "tsx",
-        "typescript",
-        "vim",
-        "yaml",
       },
     },
   },
