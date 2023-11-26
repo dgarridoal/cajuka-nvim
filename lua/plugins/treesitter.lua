@@ -15,6 +15,7 @@ return {
         "graphql",
         "http",
         "java",
+        "jsonc",
         "scss",
         "sql",
         "svelte",
