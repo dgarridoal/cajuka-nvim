@@ -3,9 +3,9 @@
 
 local keymap = vim.keymap
 
-vim.keymap.set("i", "<C-d>", "<C-d>zz")
-vim.keymap.set("i", "<C-u>", "<C-u>zz")
-vim.keymap.set("i", "<C-b>", "<C-o>de")
+keymap.set("i", "<C-d>", "<C-d>zz")
+keymap.set("i", "<C-u>", "<C-u>zz")
+keymap.set("i", "<C-b>", "<C-o>de")
 
 -- Increment / decrement
 keymap.set("n", "+", "<C-a>")
