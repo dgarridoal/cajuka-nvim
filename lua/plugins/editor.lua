@@ -1,3 +1,5 @@
+-- https://github.com/craftzdog/dotfiles-public/blob/master/.config/nvim/lua/plugins/editor.lua
+
 return {
   {
     "echasnovski/mini.hipatterns",
@@ -117,6 +119,7 @@ return {
           local function telescope_buffer_dir()
             return vim.fn.expand("%:p:h")
           end
+
           telescope.extensions.file_browser.file_browser({
             path = "%:p:h",
             cwd = telescope_buffer_dir(),
