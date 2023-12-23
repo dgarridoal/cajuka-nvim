@@ -48,6 +48,15 @@ return {
     end,
   },
 
+  -- Plenary
+  { "nvim-lua/plenary.nvim", lazy = true },
+
+  -- Dressing
+  {
+    "stevearc/dressing.nvim",
+    opts = {},
+  },
+
   -- change some telescope options and a keymap to browse plugin files
   {
     "nvim-telescope/telescope.nvim",
