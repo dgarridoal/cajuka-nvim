@@ -151,6 +151,8 @@ return {
       ensure_installed = {
         "bash",
         "html",
+        "css",
+        "gitignore",
         "javascript",
         "json",
         "lua",
@@ -163,6 +165,12 @@ return {
         "typescript",
         "vim",
         "yaml",
+        "sql",
+      },
+      query_linter = {
+        enabled = true,
+        use_virtual_text = true,
+        lint_events = { "BufWrite", "CursorHold" },
       },
     },
   },
