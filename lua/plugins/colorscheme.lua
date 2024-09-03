@@ -35,6 +35,7 @@ return {
   --     vim.cmd.colorscheme("sonokai")
   --   end,
   -- },
+
   {
     "craftzdog/solarized-osaka.nvim",
     lazy = true,
