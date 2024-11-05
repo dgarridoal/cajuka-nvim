@@ -1,8 +1,13 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.dap.core",
     "lazyvim.plugins.extras.coding.yanky",
-    "lazyvim.plugins.extras.editor.outline"
+    "lazyvim.plugins.extras.dap.core",
+    "lazyvim.plugins.extras.editor.fzf",
+    "lazyvim.plugins.extras.editor.inc-rename",
+    "lazyvim.plugins.extras.editor.outline",
+    "lazyvim.plugins.extras.lang.markdown",
+    "lazyvim.plugins.extras.lang.toml",
+    "lazyvim.plugins.extras.util.dot"
   ],
   "news": {
     "NEWS.md": "6520"
