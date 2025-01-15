@@ -18,14 +18,6 @@ keymap.set("n", "dw", "bvedi")
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
 ----- OBSIDIAN -----
-local which_key = require("which-key")
-which_key.register({
-  ["<leader>"] = {
-    o = {
-      name = "Obsidian",
-    },
-  },
-})
 vim.keymap.set(
   "n",
   "<leader>oc",
