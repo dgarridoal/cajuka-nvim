@@ -1,4 +1,23 @@
+local actions = require("fzf-lua.actions")
 return {
+  {
+    "ibhagwan/fzf-lua",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = function(_, opts)
+      opts.files["actions"] = {
+        ["ctrl-i"] = { actions.toggle_ignore },
+        ["ctrl-h"] = { actions.toggle_hidden },
+        ["ctrl-g"] = false,
+      }
+
+      opts.grep["actions"] = {
+        ["ctrl-i"] = { actions.toggle_ignore },
+        ["ctrl-h"] = { actions.toggle_hidden },
+        ["ctrl-g"] = false,
+      }
+    end,
+  },
+
   -- messages, cmdline and the popupmenu
   {
     "folke/noice.nvim",
@@ -73,23 +92,29 @@ return {
   },
 
   -- buffer line
-  -- {
-  --   "akinsho/bufferline.nvim",
-  --   event = "VeryLazy",
-  --   keys = {
-  --     { "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
-  --     { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
-  --   },
-  --   opts = {
-  --     options = {
-  --       mode = "tabs",
-  --       -- separator_style = "slant",
-  --       show_buffer_close_icons = false,
-  --       show_close_icon = false,
-  --     },
-  --   },
-  -- },
-  --
+  {
+    "b0o/incline.nvim",
+    event = "BufReadPre", -- Load this plugin before reading a buffer
+    priority = 1200, -- Set the priority for loading this plugin
+    config = function()
+      require("incline").setup({
+        window = { margin = { vertical = 0, horizontal = 1 } }, -- Set the window margin
+        hide = {
+          cursorline = true, -- Hide the incline window when the cursorline is active
+        },
+        render = function(props)
+          local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t") -- Get the filename
+          if vim.bo[props.buf].modified then
+            filename = "[+] " .. filename -- Indicate if the file is modified
+          end
+
+          local icon, color = require("nvim-web-devicons").get_icon_color(filename) -- Get the icon and color for the file
+          return { { icon, guifg = color }, { " " }, { filename } } -- Return the rendered content
+        end,
+      })
+    end,
+  },
+
   -- statusline
   {
     "nvim-lualine/lualine.nvim",
