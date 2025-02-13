@@ -176,6 +176,25 @@ return {
   {
     "folke/snacks.nvim",
     opts = {
+      picker = {
+        matcher = {
+          fuzzy = true,
+          smartcase = true,
+          ignorecase = true,
+          filename_bonus = true,
+        },
+        sources = {
+          explorer = {
+            matcher = {
+              fuzzy = true,
+              smartcase = true,
+              ignorecase = true,
+              filename_bonus = true,
+              sort_empty = false,
+            },
+          },
+        },
+      },
       dashboard = {
         sections = {
           { section = "header" },
