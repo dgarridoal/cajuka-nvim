@@ -1,23 +1,12 @@
--- local actions = require("fzf-lua.actions")
 return {
   {
     "ibhagwan/fzf-lua",
+    -- optional for icon support
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = function(_, opts)
-      opts.files["actions"] = {
-        -- ["ctrl-i"] = { actions.toggle_ignore },
-        -- ["ctrl-h"] = { actions.toggle_hidden },
-        -- ["ctrl-g"] = false,
-      }
-
-      opts.grep["actions"] = {
-        -- ["ctrl-i"] = { actions.toggle_ignore },
-        -- ["ctrl-h"] = { actions.toggle_hidden },
-        -- ["ctrl-g"] = false,
-      }
-    end,
+    -- or if using mini.icons/mini.nvim
+    -- dependencies = { "echasnovski/mini.icons" },
+    opts = {},
   },
-
   -- messages, cmdline and the popupmenu
   {
     "folke/noice.nvim",
