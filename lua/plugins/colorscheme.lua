@@ -1,13 +1,15 @@
 return {
-  -- {
-  --   -- aura-dark
-  --   "baliestri/aura-theme",
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {
-  --     transparent_background = true,
-  --   },
-  -- },
+  -- kanagawa
+  {
+    "rebelot/kanagawa.nvim",
+    lazy = true,
+    priority = 1000,
+    opts = {
+      transparent = true,
+      italic_comments = true,
+      borderless_pickers = false,
+    },
+  },
   {
     -- cyberdream
     "scottmckendry/cyberdream.nvim",
@@ -30,41 +32,11 @@ return {
     end,
     opts = {},
   },
-  -- {
-  --   -- onedark
-  --   "navarasu/onedark.nvim",
-  --   priority = 1000,
-  -- },
-  {
-    "sainnhe/sonokai",
-    priority = 1000,
-    config = function()
-      vim.g.sonokai_transparent_background = "1"
-      vim.g.sonokai_enable_italic = "1"
-      vim.g.sonokai_style = "andromeda"
-    end,
-  },
-  -- {
-  --   -- min-theme
-  --   "datsfilipe/min-theme.nvim",
-  --   lazy = true,
-  --   priority = 1000,
-  --   theme = "dark", -- String: 'dark' or 'light', determines the colorscheme used
-  --   transparent = true, -- Boolean: Sets the background to transparent
-  --   italics = {
-  --     comments = true, -- Boolean: Italicizes comments
-  --     keywords = true, -- Boolean: Italicizes keywords
-  --     functions = true, -- Boolean: Italicizes functions
-  --     strings = true, -- Boolean: Italicizes strings
-  --     variables = true, -- Boolean: Italicizes variables
-  --   },
-  -- },
-  --
 
   {
     -- solarized-osaka
     "craftzdog/solarized-osaka.nvim",
-    lazy = true,
+    lazy = false,
     priority = 1000,
     opts = {
       transparent_background = true,
@@ -80,6 +52,14 @@ return {
     --       indentscope_color = "",
     --     },
     --   },
+  },
+  {
+    "dgarridoal/one-hunter-material.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      transparent_background = true,
+    },
   },
   {
     "LazyVim/LazyVim",

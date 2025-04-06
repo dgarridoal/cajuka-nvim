@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-
+vim.opt.shiftwidth = 4
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
 
@@ -29,6 +29,9 @@ vim.opt.splitbelow = true -- Put new windows below current
 vim.opt.splitright = true -- Put new windows right of current
 vim.opt.splitkeep = "cursor"
 vim.opt.mouse = ""
+
+vim.opt.list = true
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
