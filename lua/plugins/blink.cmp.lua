@@ -1,11 +1,4 @@
-local has_words_before = function()
-  unpack = unpack or table.unpack
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-end
-
 return {
-
   "saghen/blink.cmp",
   -- optional: provides snippets for the snippet source
   dependencies = { "rafamadriz/friendly-snippets" },
@@ -32,26 +25,7 @@ return {
     -- C-k: Toggle signature help (if signature.enabled = true)
     --
     -- See :h blink-cmp-config-keymap for defining your own keymap
-
-    keymap = {
-      preset = "none",
-
-      ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
-
-      ["<C-y>"] = { "select_and_accept" },
-
-      -- If completion hasn't been triggered yet, insert the first suggestion; if it has, cycle to the next suggestion.
-      ["<Tab>"] = {
-        function(cmp)
-          if has_words_before() then
-            return cmp.insert_next()
-          end
-        end,
-        "fallback",
-      },
-      -- Navigate to the previous suggestion or cancel completion if currently on the first one.
-      ["<S-Tab>"] = { "insert_prev" },
-    },
+    keymap = { preset = "enter" },
 
     appearance = {
       -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
@@ -61,15 +35,12 @@ return {
 
     -- (Default) Only show the documentation popup when manually triggered
     completion = {
-      menu = {
+      documentation = { auto_show = true, window = {
         border = "rounded",
-      },
-      documentation = { auto_show = true, window = { border = "rounded" } },
-      ghost_text = {
-        show_with_menu = true,
-      },
+      } },
+      menu = { border = "rounded" },
     },
-    signature = { enabled = true, window = { border = "rounded" } },
+    signature = { window = { border = "single" } },
 
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
