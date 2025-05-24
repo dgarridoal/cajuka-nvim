@@ -9,6 +9,14 @@ return {
   },
   -- messages, cmdline and the popupmenu
   {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = {
+      preset = "classic",
+      win = { border = "single" },
+    },
+  },
+  {
     "folke/noice.nvim",
     opts = function(_, opts)
       table.insert(opts.routes, {
@@ -111,7 +119,7 @@ return {
     opts = {
       options = {
         -- globalstatus = false,
-        theme = "solarized-osaka",
+        theme = "kanagawa",
       },
     },
   },
